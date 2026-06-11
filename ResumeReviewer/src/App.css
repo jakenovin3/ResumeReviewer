@@ -1,0 +1,88 @@
+:root {
+  /* Primary - blue */
+  --color-primary:        #185FA5;
+  --color-primary-light:  #378ADD;
+  --color-primary-subtle: #E6F1FB;
+  --color-primary-border: #B5D4F4;
+  --color-primary-text:   #042C53;
+
+  /* Neutrals */
+  --color-white:          #FFFFFF;
+  --color-text-primary:   #042C53;
+  --color-text-muted:     #85B7EB;
+
+  /* Borders */
+  --color-border:         #B5D4F4;
+  --color-border-light:   #C8DDF5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+#bodyMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#pageHeaderRoot {
+  margin-bottom: 6vh;
+  border-bottom: 1px black solid;
+}
+
+#jobSearchRoot {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
+#jobSearchRoot > h3 {
+  margin: 0;
+}
+
+#jobSearchInput {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#fileUploadRoot {
+  height: 50vh;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
+#fileUploadRoot > h3 {
+  margin: 0;
+}
+
+#fileUploadArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: black 1px solid;
+  border-radius: 10px;
+}

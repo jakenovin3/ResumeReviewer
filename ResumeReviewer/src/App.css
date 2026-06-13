@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
   /* Primary - blue */
   --color-primary:        #185FA5;
   --color-primary-light:  #378ADD;
-  --color-primary-subtle: #E6F1FB;
+  --color-primary-subtle: #f2f8fd;
   --color-primary-border: #B5D4F4;
   --color-primary-text:   #042C53;
 
@@ -14,6 +16,11 @@
   /* Borders */
   --color-border:         #B5D4F4;
   --color-border-light:   #C8DDF5;
+
+  /* Submit button - green */
+  --color-btn-green:       #639922;
+  --color-btn-green-hover: #3B6D11;
+  --color-btn-green-text:  #FFFFFF;
 }
 
 *, *::before, *::after {
@@ -24,6 +31,11 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--color-primary-subtle);
 }
 
 #root {
@@ -39,38 +51,124 @@ html, body {
 }
 
 #pageHeaderRoot {
+  width: 100%;
   margin-bottom: 6vh;
-  border-bottom: 1px black solid;
+  border-bottom: 1px var(--color-primary) solid;
+  background-color: var(--color-primary-border);
+}
+
+#pageHeaderMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem; 
+  color: var(--color-primary-text);
+}
+
+#titleDesc {
+  display: flex;
+  gap: 10px;
+}
+
+#pageHeaderMain h1 {
+  margin: 0;
+}
+
+#pageHeaderMain span {
+  color: var(--color-primary-text);
+  padding: 5px;
+  border-radius: 12px;
+  border: solid 1px var(--color-primary);
+  background-color: var(--color-primary-subtle);
+  font-size: 10px;
 }
 
 #jobSearchRoot {
-  width: 35%;
+  width: 35vw;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  border: black 1px solid;
+  border: var(--color-primary-border) 1px solid;
   border-radius: 10px;
+  background-color: white;
 }
 
-#jobSearchRoot > h3 {
+.stepHeaders {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 10px 0;
+}
+
+.stepHeaders > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 22px;
+  padding: 3px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 12px;
+  border: var(--color-primary) 1px solid;
+  border-radius: 8px;
+}
+
+.stepHeaders > h3 {
   margin: 0;
+  color: var(--color-primary-text);
+}
+
+#jobSearchSection {
+  height: 1.5rem;
+  width: 100%;
+  display: flex;
+}
+
+#jobSearchForm {
+  width: 100%;
 }
 
 #jobSearchInput {
+  height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border: var(--color-border-light) 1px solid;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+#jobSearchInput:focus {
+  outline: none;
+}
+
+#jobSearchSubmit {
+  width: 2rem;
+  color: var(--color-primary-light);
+  background-color: rgb(236, 247, 255);
+  border: var(--color-border-light) 1px solid;
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  transition: background 0.2s ease;
+}
+
+#jobSearchSubmit:hover {
+  background-color: var(--color-primary-light);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 #fileUploadRoot {
   height: 50vh;
-  width: 35%;
+  width: 35vw;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  border: black 1px solid;
+  border: var(--color-primary-border) 1px solid;
   border-radius: 10px;
+  background-color: white;
 }
 
 #fileUploadRoot > h3 {
@@ -83,6 +181,44 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: black 1px solid;
+  padding: 15px;
+  text-align: center;
+  border: var(--color-primary-border) 3px dotted;
   border-radius: 10px;
+  color: #378ADD;
+  transition: background 0.1s ease;
+}
+
+#fileUploadArea:hover {
+  background-color: rgb(245, 245, 245);
+  transition: background 0.1s ease;
+  cursor: pointer;
+}
+
+#submitResumeBtn {
+  height: 2rem;
+  width: 35vw;
+  color: var(--color-btn-green-text);
+  background-color: var(--color-btn-green);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+#submitResumeBtn:hover {
+  background-color: var(--color-btn-green-hover);
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #jobSearchRoot, #fileUploadRoot, #submitResumeBtn {
+    width: 80vw;
+  }
+
+  #titleDesc, #titleDesc p {
+    flex-direction: column;
+    margin: 0;
+  }
 }

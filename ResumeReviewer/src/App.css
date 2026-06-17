@@ -80,7 +80,7 @@ body {
   border-radius: 12px;
   border: solid 1px var(--color-primary);
   background-color: var(--color-primary-subtle);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #jobSearchRoot {
@@ -210,6 +210,17 @@ body {
   background-color: var(--color-btn-green-hover);
   transition: background 0.2s ease;
   cursor: pointer;
+}
+
+.reviewSection {
+  width: 55%;
+  padding: 12px;
+  border: var(--color-primary-border) 1px solid;
+  border-radius: 10px;
+}
+
+.reviewRatingSection {
+  width: 55%;
 }
 
 @media (max-width: 600px) {

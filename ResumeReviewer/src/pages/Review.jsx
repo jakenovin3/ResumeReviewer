@@ -10,7 +10,27 @@ export default function Review() {
       </div>
       <div id="bodyMain">
         <div className="reviewRatingSection">
-          <h1>4.2/5 stars</h1>
+          <div>
+            <h1>Overall: 4.2/5 stars</h1>
+            <div>
+              <p>ATS Pass Likelihood: </p>
+              <span id="atsPassFail">Likely to pass</span>
+            </div>
+          </div>
+          <div id="ratingAreas">
+            <div className="rating">
+              <h3>Relevant Experience</h3>
+              <h2>3.9 stars</h2>
+            </div>
+            <div className="rating">
+              <h3>Skills Match</h3>
+              <h2>4.5 stars</h2>
+            </div>
+            <div className="rating">
+              <h3>Formatting/Clarity</h3>
+              <h2>4.1 stars</h2>
+            </div>
+          </div>
         </div>
         <div className="reviewSummarySection reviewSection">
           <h3>Summary</h3>
@@ -18,12 +38,8 @@ export default function Review() {
         </div>
         <div className="reviewNotesSection reviewSection">
           <div>
-            <h3>The Good</h3>
-            <p></p>
-          </div>
-          <div>
-            <h3>The Bad</h3>
-            <p></p>
+            <h3>Suggested Edits</h3>
+            <ol></ol>
           </div>
         </div>
       </div>

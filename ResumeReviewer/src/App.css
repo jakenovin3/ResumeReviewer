@@ -223,6 +223,11 @@ body {
   width: 55%;
 }
 
+#ratingAreas {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 600px) {
   #jobSearchRoot, #fileUploadRoot, #submitResumeBtn {
     width: 80vw;

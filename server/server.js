@@ -1,17 +1,17 @@
-import express from 'express'
-import cors from 'cors'
 import dotenv from 'dotenv'
-
-dotenv.config();
-
+import cors from 'cors'
+import express from 'express'
 const app = express();
 const port = 3001;
-
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:5173",
+}
+app.use(cors(corsOptions));
 app.use(express.json());
+dotenv.config();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send("hello world");
 });
 
 app.post('/api/analyze', async (req, res) => {

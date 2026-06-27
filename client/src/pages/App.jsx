@@ -7,7 +7,7 @@ import FileUpload from "../components/FileUpload.jsx";
 
 export default function App() {
   const [job, setJob] = useState("");
-  const [resume, setResume] = useState(null);
+  const [resumeFile, setResumeFile] = useState(null);
 
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:3001/");
@@ -18,6 +18,18 @@ export default function App() {
     fetchAPI();
   }, []);
 
+  const onFileChange = (event) => {
+    setResumeFile(event.target.files[0]);
+    console.log(event.target.files[0]);
+  };
+
+  const onFileUpload = () => {
+    const formData = new FormData();
+    formData.append("resume_file", resumeFile);
+    console.log(resumeFile);
+    axios.post("http://localhost:3001/api/analyze", formData);
+  };
+
   return (
     <>
       <div id="headerMain">
@@ -25,8 +37,10 @@ export default function App() {
       </div>
       <div id="bodyMain">
         <JobSearch setJob={setJob} />
-        <FileUpload />
-        <button id="submitResumeBtn">Start reviewing!</button>
+        <FileUpload setResumeFile={setResumeFile} />
+        <button id="submitResumeBtn" onClick={onFileUpload}>
+          Start reviewing!
+        </button>
       </div>
     </>
   );

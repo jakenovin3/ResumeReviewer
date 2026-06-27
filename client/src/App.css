@@ -50,6 +50,14 @@ body {
   gap: 2rem;
 }
 
+hr {
+  display: none;
+}
+
+.vl {
+  border-left: 1px solid var(--color-border);
+}
+
 #pageHeaderRoot {
   width: 100%;
   margin-bottom: 6vh;
@@ -212,11 +220,33 @@ body {
   cursor: pointer;
 }
 
+#scores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .reviewSection {
-  width: 55%;
+  width: 70%;
   padding: 12px;
   border: var(--color-primary-border) 1px solid;
   border-radius: 10px;
+  background-color: white;
+}
+
+#atsScoreDiv {
+  height: 50%;
+  display: flex;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 18px;
+  font-size: 14px;
+}
+
+#atsScoreDiv p {
+  display: flex;
+  align-items: center;
+  margin: 2px;
 }
 
 .reviewRatingSection {
@@ -225,10 +255,86 @@ body {
 
 #ratingAreas {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 50px 0 50px;
+  border-radius: 15px;
+}
+
+.rating:hover {
+  background-color: var(--color-border-light);
+  cursor: pointer;
+  animation: bgFadeIn 0.2s ease-in-out forwards; 
+}
+
+.rating * {
+  display: flex;
+  justify-content: center;
+}
+
+.rating h2 {
+  margin-top: 0;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 275px;
+  background-color: var(--color-primary-subtle);
+  color: black;
+  text-align: center;
+  padding: 12px;
+  margin: -10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bgFadeIn {
+  0% {
+    background-color: #e5f2fc;
+  }
+  100% {
+    background-color: var(--color-border-light);
+  }
 }
 
 @media (max-width: 600px) {
+
+  hr {
+    display: block;
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid var(--color-border);
+
+  }
+
   #jobSearchRoot, #fileUploadRoot, #submitResumeBtn {
     width: 80vw;
   }
@@ -237,4 +343,29 @@ body {
     flex-direction: column;
     margin: 0;
   }
+
+  #scores {
+    flex-direction: column;
+  }
+
+  #ratingAreas {
+    flex-direction: column;
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background-color: var(--color-primary-subtle);
+  }
+
+  .rating h2 {
+    margin-top: 0;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: hidden;
+  }
+
 }
